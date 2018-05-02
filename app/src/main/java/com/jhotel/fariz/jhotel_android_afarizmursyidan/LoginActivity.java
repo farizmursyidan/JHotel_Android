@@ -1,5 +1,5 @@
 package com.jhotel.fariz.jhotel_android_afarizmursyidan;
-
+//Fariz
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AlertDialog;
