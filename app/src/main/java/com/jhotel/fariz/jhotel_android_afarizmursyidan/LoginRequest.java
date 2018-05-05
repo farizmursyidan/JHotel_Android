@@ -11,7 +11,7 @@ import java.util.Map;
  */
 
 public class LoginRequest extends StringRequest {
-    private static final String Login_URL = "http://192.168.1.6/logincust";
+    private static final String Login_URL = "http://192.168.1.103:8080/logincust";
     private Map<String, String> params;
 
     public LoginRequest(String email, String password,

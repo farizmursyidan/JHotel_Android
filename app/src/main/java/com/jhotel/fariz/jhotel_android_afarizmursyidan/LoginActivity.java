@@ -22,6 +22,7 @@ public class LoginActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+
         final EditText emailInput = (EditText) findViewById(R.id.inputEmail);
         final EditText passInput = (EditText) findViewById(R.id.inputPass);
         final Button loginButton = (Button) findViewById(R.id.buttonLogin);
@@ -36,7 +37,11 @@ public class LoginActivity extends AppCompatActivity {
                         try{
                             JSONObject jsonResponse = new JSONObject(response);
                             if(jsonResponse!=null) {
+                                int id = Integer.parseInt(jsonResponse.optString("id"));
                                 AlertDialog.Builder builder = new AlertDialog.Builder(LoginActivity.this);
+                                Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+                                intent.putExtra("id", id);
+                                LoginActivity.this.startActivity(intent);
                                 builder.setMessage("Login Success")
                                         .create()
                                         .show();
