@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ExpandableListAdapter;
 import android.widget.ExpandableListView;
 
@@ -35,19 +36,32 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         Intent intent = getIntent();
-        Bundle b = intent.getExtras();
-        currentUserId = (int) b.get("id");
+        currentUserId = intent.getIntExtra("id", 0);
         expListView = (ExpandableListView) findViewById(R.id.expanded_menu);
         refreshList();
 
         expListView.setOnChildClickListener(new ExpandableListView.OnChildClickListener() {
             @Override
             public boolean onChildClick(ExpandableListView parent, View v, int groupPosition, int childPosition, long id) {
-                Room selected = childMapping.get(listHotel.get(groupPosition)).get(childPosition);
+                Room selected_room = childMapping.get(listHotel.get(groupPosition)).get(childPosition);
+                Hotel selected_hotel = listHotel.get(groupPosition);
                 Intent intent = new Intent(MainActivity.this, BuatPesananActivity.class);
                 intent.putExtra("id_customer", currentUserId);
+                intent.putExtra("nomorKamar", selected_room.getRoomNumber());
+                intent.putExtra("id_hotel", selected_hotel.getID());
+                intent.putExtra("tariff", selected_room.getDailyTariff());
                 MainActivity.this.startActivity(intent);
                 return false;
+            }
+        });
+
+        final Button pesananButton = (Button) findViewById(R.id.buttonPesanan);
+        pesananButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, SelesaiPesananActivity.class);
+                intent.putExtra("customer_id", currentUserId);
+                MainActivity.this.startActivity(intent);
             }
         });
     }
@@ -81,7 +95,6 @@ public class MainActivity extends AppCompatActivity {
 
                     for (String key : hotelHashMap.keySet()) {
                         listHotel.add(hotelHashMap.get(key));
-
                         childMapping.put(hotelHashMap.get(key), roomsMap.get(key));
                     }
                     listAdapter = new MenuListAdapter(MainActivity.this, listHotel, childMapping);

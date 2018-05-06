@@ -9,7 +9,9 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import com.android.volley.RequestQueue;
 import com.android.volley.Response;
+import com.android.volley.toolbox.Volley;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -29,13 +31,11 @@ public class BuatPesananActivity extends AppCompatActivity {
         Intent intent = getIntent();
         Bundle b = intent.getExtras();
         customer_id = (int) b.get("id_customer");
+        roomNumber = (String) b.get("nomorKamar");
+        idHotel = (int) b.get("id_hotel");
+        tarif = (double) b.get("tariff");
 
-        AlertDialog.Builder builder = new AlertDialog.Builder(BuatPesananActivity.this);
-        builder.setMessage("Login Failed " + customer_id)
-                .create()
-                .show();
-
-        TextView room_number = (TextView) findViewById(R.id.room_number);
+        final TextView room_number = (TextView) findViewById(R.id.room_number);
         final TextView tariff = (TextView) findViewById(R.id.tariff);
         final EditText durasi_hari = (EditText) findViewById(R.id.durasi_hari);
         final TextView total_biaya = (TextView) findViewById(R.id.total_biaya);
@@ -44,7 +44,7 @@ public class BuatPesananActivity extends AppCompatActivity {
 
         pesan.setVisibility(View.GONE);
         room_number.setText(roomNumber);
-        tariff.setText(""+tariff);
+        tariff.setText(""+tarif);
         total_biaya.setText("0");
 
         hitung.setOnClickListener(new View.OnClickListener() {
@@ -59,10 +59,15 @@ public class BuatPesananActivity extends AppCompatActivity {
         });
 
         pesan.setOnClickListener(new View.OnClickListener() {
+
+            final String jumlah_hari = banyakHari+"";
+            final String nomor_kamar = roomNumber;
+            final String id_customer = customer_id+"";
+            final String id_hotel = idHotel+"";
+
             @Override
             public void onClick(View v) {
-//                final String email = emailInput.getText().toString();
-//                final String password = passInput.getText().toString();
+
                 Response.Listener<String> responseListener = new Response.Listener<String> () {
                     @Override
                     public void onResponse(String response) {
@@ -84,9 +89,9 @@ public class BuatPesananActivity extends AppCompatActivity {
                         }
                     }
                 };
-//                BuatPesananRequest buatPesananRequest = new BuatPesananRequest(email,password,responseListener);
-//                RequestQueue queue = Volley.newRequestQueue(BuatPesananActivity.this);
-//                queue.add(buatPesananRequest);
+                BuatPesananRequest buatPesananRequest = new BuatPesananRequest(banyakHari+"", id_customer, id_hotel, nomor_kamar, responseListener);
+                RequestQueue queue = Volley.newRequestQueue(BuatPesananActivity.this);
+                queue.add(buatPesananRequest);
             }
         });
     }

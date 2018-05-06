@@ -5,6 +5,15 @@
     android:orientation="vertical"
     android:background="#f4f4f4" >
 
+    <Button
+        android:id="@+id/buttonPesanan"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="Pesanan"
+        android:layout_marginTop="24dp"
+        android:layout_marginBottom="24dp"/>
+
     <ExpandableListView
         android:id="@+id/expanded_menu"
         android:layout_height="match_parent"
