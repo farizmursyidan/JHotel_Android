@@ -11,7 +11,7 @@ import java.util.Map;
  */
 
 public class BuatPesananRequest extends StringRequest {
-    private static final String Pesanan_URL = "http://192.168.1.103:8080/bookpesanan";
+    private static final String Pesanan_URL = "http://192.168.1.100:8080/bookpesanan";
     private Map<String, String> params;
 
     public BuatPesananRequest(String jumlah_hari, String id_customer, String id_hotel, String nomor_kamar,

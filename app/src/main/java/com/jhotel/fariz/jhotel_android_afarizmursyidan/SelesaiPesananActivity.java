@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.TextView;
 
@@ -25,9 +26,6 @@ import static com.android.volley.toolbox.Volley.newRequestQueue;
 public class SelesaiPesananActivity extends AppCompatActivity {
     int currentUserId;
     public static String idPesanan;
-    int biaya1;
-    int jumlahHari;
-    String tanggalPesan;
     public static TextView staticIdPesanan;
     public static TextView staticBiaya;
     public static TextView staticJumlahHari;
@@ -43,6 +41,7 @@ public class SelesaiPesananActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_selesai_pesanan);
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
         Intent intent = getIntent();
         currentUserId = intent.getIntExtra("customer_id", 0);

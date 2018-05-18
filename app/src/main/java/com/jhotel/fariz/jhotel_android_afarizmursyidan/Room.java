@@ -75,10 +75,10 @@ public class Room {
 
     public String toString()
     {
-        return  "\nNomor Kamar   : " + getRoomNumber() +
-                "\nTipe Kamar    : " + getTipeKamar() +
-                "\nHarga         : " + getDailyTariff() +
-                "\nStatus Kamar  : " + getStatusKamar();
+        return  "\nNomor Kamar\t\t: " + getRoomNumber() +
+                "\nTipe Kamar\t\t\t\t: " + getTipeKamar() +
+                "\nHarga\t\t\t\t\t\t\t\t\t\t\t: " + getDailyTariff() +
+                "\nStatus Kamar\t\t: " + getStatusKamar();
 
     }
 }

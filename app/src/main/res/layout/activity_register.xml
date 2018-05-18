@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.jhotel.fariz.jhotel_android_afarizmursyidan.LoginActivity">
+    android:background="@drawable/background"
+    tools:context="com.jhotel.fariz.jhotel_android_afarizmursyidan.RegisterActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -20,7 +21,10 @@
             android:ems="10"
             android:inputType="textEmailAddress"
             android:layout_gravity="center"
-            android:hint="Full Name" />
+            android:hint="Full Name"
+            android:textColor="@color/white"
+            android:textColorHint="@color/white"
+            android:backgroundTint="@color/white"/>
 
         <EditText
             android:id="@+id/Email"
@@ -31,7 +35,10 @@
             android:ems="10"
             android:inputType="textEmailAddress"
             android:layout_gravity="center"
-            android:hint="Email" />
+            android:hint="Email"
+            android:textColor="@color/white"
+            android:textColorHint="@color/white"
+            android:backgroundTint="@color/white"/>
 
         <EditText
             android:id="@+id/Password"
@@ -42,14 +49,47 @@
             android:ems="10"
             android:inputType="textPassword"
             android:layout_gravity="center"
-            android:hint="Password" />
+            android:hint="Password"
+            android:textColor="@color/white"
+            android:textColorHint="@color/white"
+            android:backgroundTint="@color/white"/>
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"/>
+
+        <Button
+            android:id="@+id/buttonUpload"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:textStyle="bold"
+            android:textColor="@color/white"
+            android:background="@drawable/button"
+            android:text="Upload Profile Picture"
+            android:width="210dp"
+            android:layout_marginTop="24dp"/>
+
+        <ImageView
+            android:layout_marginTop="24dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:id="@+id/foto"
+            android:layout_gravity="center"/>
 
         <Button
             android:id="@+id/buttonRegister"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
+            android:textStyle="bold"
+            android:textColor="@color/white"
+            android:background="@drawable/button"
             android:text="Register"
+            android:width="210dp"
             android:layout_marginTop="24dp"/>
 
     </LinearLayout>

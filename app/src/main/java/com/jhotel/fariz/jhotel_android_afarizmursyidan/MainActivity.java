@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.ExpandableListAdapter;
 import android.widget.ExpandableListView;
@@ -25,6 +26,7 @@ public class MainActivity extends AppCompatActivity {
     int currentUserId;
     private ArrayList<Hotel> listHotel = new ArrayList<>();
     private ArrayList<Room> listRoom = new ArrayList<>();
+    private ArrayList<Customer> listCustomer = new ArrayList<>();
     private HashMap<Hotel, ArrayList<Room>> childMapping = new HashMap<>();
     ExpandableListAdapter listAdapter;
     ExpandableListView expListView;
@@ -35,6 +37,8 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
+
         Intent intent = getIntent();
         currentUserId = intent.getIntExtra("id", 0);
         expListView = (ExpandableListView) findViewById(R.id.expanded_menu);
@@ -60,6 +64,16 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this, SelesaiPesananActivity.class);
+                intent.putExtra("customer_id", currentUserId);
+                MainActivity.this.startActivity(intent);
+            }
+        });
+
+        final Button profileButton = (Button) findViewById(R.id.buttonProfile);
+        profileButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, CustomerActivity.class);
                 intent.putExtra("customer_id", currentUserId);
                 MainActivity.this.startActivity(intent);
             }

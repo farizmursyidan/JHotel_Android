@@ -13,7 +13,7 @@ import java.util.Map;
 
 public class PesananFetchRequest extends StringRequest {
 
-    private static final String PesananFetch_URL = "http://192.168.1.103:8080/pesanancustomer/";
+    private static final String PesananFetch_URL = "http://192.168.1.100:8080/pesanancustomer/";
     private Map<String, String> params;
 
     public PesananFetchRequest(Response.Listener<String> listener, String id_customer) {

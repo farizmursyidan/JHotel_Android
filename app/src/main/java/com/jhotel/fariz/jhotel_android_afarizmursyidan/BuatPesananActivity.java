@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -27,6 +28,7 @@ public class BuatPesananActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_buat_pesanan);
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
         Intent intent = getIntent();
         Bundle b = intent.getExtras();
@@ -79,6 +81,7 @@ public class BuatPesananActivity extends AppCompatActivity {
                                         .create()
                                         .show();
                                 Intent intent = new Intent(BuatPesananActivity.this, MainActivity.class);
+                                intent.putExtra("id", customer_id);
                                 BuatPesananActivity.this.startActivity(intent);
                             }
                         } catch (JSONException e) {

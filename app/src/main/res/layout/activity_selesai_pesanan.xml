@@ -5,30 +5,62 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:weightSum="100"
-    tools:context="com.jhotel.fariz.jhotel_android_afarizmursyidan.LoginActivity">
+    android:background="@drawable/background"
+    tools:context="com.jhotel.fariz.jhotel_android_afarizmursyidan.SelesaiPesananActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:weightSum="100"
-        android:layout_marginTop="50dp">
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:gravity="center_vertical">
 
         <LinearLayout
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_weight="50"
-            android:orientation="vertical"
-            android:layout_gravity="center">
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:src="@drawable/pesanan"
+                android:layout_marginBottom="10dp"/>
 
             <TextView
                 android:id="@+id/staticIdPesanan"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
                 android:layout_gravity="center"
-                android:text="ID Pesanan:"/>
+                android:text="ID Pesanan:"
+                android:textSize="18sp"
+                android:textColor="@color/white"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:id="@+id/id_pesanan"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="Text View"
+                android:textSize="18sp"
+                android:textColor="@color/white"
+                android:textStyle="bold"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:src="@drawable/biaya"
+                android:layout_marginBottom="10dp"/>
 
             <TextView
                 android:id="@+id/staticBiaya"
@@ -37,42 +69,9 @@
                 android:layout_weight="1"
                 android:layout_gravity="center"
                 android:text="Biaya:"
-                android:paddingTop="20dp"/>
-
-            <TextView
-                android:id="@+id/staticJumlahHari"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:layout_gravity="center"
-                android:text="Jumlah Hari:"
-                android:paddingTop="20dp"/>
-
-            <TextView
-                android:id="@+id/staticTanggalPesan"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:layout_gravity="center"
-                android:text="Tanggal Pesan:"
-                android:paddingTop="20dp"/>
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:layout_weight="50"
-            android:layout_gravity="center">
-
-            <TextView
-                android:id="@+id/id_pesanan"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:layout_gravity="center"
-                android:text="Text View"/>
+                android:textSize="18sp"
+                android:textColor="@color/white"
+                android:textStyle="bold"/>
 
             <TextView
                 android:id="@+id/biaya"
@@ -81,7 +80,43 @@
                 android:layout_weight="1"
                 android:layout_gravity="center"
                 android:text="Text View"
-                android:paddingTop="20dp"/>
+                android:textSize="18sp"
+                android:textColor="@color/white"
+                android:textStyle="bold"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:gravity="center_vertical">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:src="@drawable/hari"
+                android:layout_marginBottom="10dp"/>
+
+            <TextView
+                android:id="@+id/staticJumlahHari"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_gravity="center"
+                android:text="Jumlah Hari:"
+                android:textSize="18sp"
+                android:textColor="@color/white"
+                android:textStyle="bold"/>
 
             <TextView
                 android:id="@+id/jumlah_hari"
@@ -90,7 +125,35 @@
                 android:layout_weight="1"
                 android:layout_gravity="center"
                 android:text="Text View"
-                android:paddingTop="20dp"/>
+                android:textSize="18sp"
+                android:textColor="@color/white"
+                android:textStyle="bold"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:src="@drawable/tanggal"
+                android:layout_marginBottom="10dp"/>
+
+            <TextView
+                android:id="@+id/staticTanggalPesan"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_gravity="center"
+                android:text="Tanggal Pesan:"
+                android:textSize="18sp"
+                android:textColor="@color/white"
+                android:textStyle="bold"/>
 
             <TextView
                 android:id="@+id/tanggal_pesan"
@@ -99,7 +162,9 @@
                 android:layout_weight="1"
                 android:layout_gravity="center"
                 android:text="Text View"
-                android:paddingTop="20dp"/>
+                android:textSize="18sp"
+                android:textColor="@color/white"
+                android:textStyle="bold"/>
 
         </LinearLayout>
 
@@ -110,20 +175,27 @@
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:gravity="center"
-        android:layout_marginTop="20dp">
+        android:layout_marginTop="50dp"
+        android:layout_marginBottom="50dp">
 
         <Button
-            android:layout_width="wrap_content"
+            android:layout_width="210dp"
             android:layout_height="wrap_content"
             android:id="@+id/batal"
-            android:text="Batal"/>
+            android:text="Batal"
+            android:textStyle="bold"
+            android:textColor="@color/white"
+            android:background="@drawable/button"/>
 
         <Button
-            android:layout_width="wrap_content"
+            android:layout_width="210dp"
             android:layout_height="wrap_content"
             android:id="@+id/selesai"
             android:text="Selesai"
-            android:layout_marginTop="20dp"/>
+            android:layout_marginTop="20dp"
+            android:textStyle="bold"
+            android:textColor="@color/white"
+            android:background="@drawable/button"/>
 
     </LinearLayout>
 

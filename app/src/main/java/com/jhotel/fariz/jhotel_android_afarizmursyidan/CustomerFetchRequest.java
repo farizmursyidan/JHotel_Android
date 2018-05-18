@@ -8,15 +8,15 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * Created by Fariz on 03/05/2018.
+ * Created by Fariz on 10/05/2018.
  */
 
-public class MenuRequest extends StringRequest {
-    private static final String Menu_URL = "http://192.168.1.100:8080/vacantrooms";
+public class CustomerFetchRequest extends StringRequest {
+    private static final String CustomerFetch_URL = "http://192.168.1.100:8080/getcustomer/";
     private Map<String, String> params;
 
-    public MenuRequest(Response.Listener<String> listener) {
-        super(Request.Method.GET, Menu_URL, listener, null);
+    public CustomerFetchRequest(Response.Listener<String> listener, String id_customer) {
+        super(Request.Method.GET, CustomerFetch_URL+id_customer, listener, null);
         params = new HashMap<>();
     }
 
